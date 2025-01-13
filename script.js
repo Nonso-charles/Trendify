@@ -11,6 +11,9 @@
     //Select all "Add to Cart" buttons and the cart message element
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartMessage = document.getElementById('cart-message');
+    const cartCount = document.getElementById('cart-count');
+    const checkoutButton = document.getElementById('checkout-button');
+    const totalPriceElement = document.getElementById('total-price');
 
     // Array to store cart items 
     let cart = [];
@@ -42,15 +45,43 @@
         });
     });
 
+    // Function to update the cart UI
+    function updateCartUI() {
+        // Clear the current cart display
+        cartItemsContainer.innerHTML = '';
 
-    // Select DOM elements
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const cartCount = document.getElementById('cart-count');
-    const cartItemsContainer = document.getElementById('cart-items');
-    const totalPriceElement = document.getElementById('total-price');
-    const checkoutButton = document.getElementById('checkout-button');
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            totalPriceElement.textContent = '0.00';
+            return;
+        }
 
-    // Array to store cart items
-    let cart = [];
+        // Add cart items to the UI
+        cart.forEach((item, index) => {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
 
-    
+            cartItem.innerHTML = `<h4>${item.name}</h4>
+            <p>$${item.price.toFixed(2)}
+            <button class="remove-button" data-index="${index}">Remove</button>`;
+
+            cartItemsContaine.appendChild(cartItem);
+        });
+
+        // Update total price
+        const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+
+        // Add event listeners to remove buttons
+        const removeButtons = document.querySelectorAll('.remove-button');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const index = button.getAttribute('data-index');
+                removeFromCart(index);
+            });
+        });
+    }
+
+    // Function to remove an item from the cart
+
+
