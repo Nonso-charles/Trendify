@@ -9,26 +9,122 @@
 </head>
 
 <body>
-  <nav>
-      <a href="#" class="logo">Trendify</a>
-      <div class="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
-          <a href="#">Cart</a>
+    <nav>
+        <a href="#" class="logo">Trendify</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Cart</a>
 
-      </div>
-      <input type="text" class="search-bar" placeholder="Search...">
-      <!-- Hamburger icon -->
-      <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-  </nav>
-  
-  <script src="script.js"></script>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <!-- Hamburger icon -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <header class="header">
+        <h1>Welcome to Trendify</h1>
+        <p>Discover our latest products</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="#products-section">Products</a>
+        <a href="#cart-section">Cart(<span id="cart-count">0</span>)</a>
+    </nav>
+    <section class="products-section" id="product-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Stylish Sneakers</h3>
+                    <p class="product-price">$49.99</p>
+                    <button class="add-to-cart" data-name="Stylish Sneakers" data-price="49.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Classic Watch</h3>
+                    <p class="product-price">$99.99</p>
+                    <button class="add-to-cart" data-name="Classic Watch" data-price="99.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Wireless Earbuds</h3>
+                    <p class="product-price">$99.99</p>
+                    <button class="add-to-cart" data-name="Wireless Earbud" data-price="99.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Bluetooth Speaker</h3>
+                    <p class="product-price">$59.99</p>
+                    <button class="add-to-cart" data-name="Bluetooth Speaker" data-price="59.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Gaming Mouse</h3>
+                    <p class="product-price">$39.99</p>
+                    <button class="add-to-cart" data-name="Gaming Mouse" data-price="39.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Laptop Stand</h3>
+                    <p class="product-price">$29.99</p>
+                    <button class="add-to-cart" data-name="Laptop Stand" data-price="29.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Noise Cancelling Headphone</h3>
+                    <p class="product-price">$199.99</p>
+                    <button class="add-to-cart" data-name="Noise Cancelling Heasdphone" data-price="199.99">Add to
+                        Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Wireless Keyboard</h3>
+                    <p class="product-price">$49.99</p>
+                    <button class="add-to-cart" data-name="Wireless Keyboard" data-price="49.99">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="" alt="">
+                    <h3 class="product-name">Portable Charger</h3>
+                    <p class="product-price">$24.99</p>
+                    <button class="add-to-cart" data-name="Portable Charger" data-price="24.99">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p id="cart-message" class="cart-message"></p>
+    </footer>
+
+    <section class="cart-section" id="cart-section">
+        <div class="cart-container">
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <div id="cart-summary" class="cart-summary">
+                <h3>Total: $<span id="total-price">0.00</span>
+                </h3>
+                <button id="checkout-button" class="checkout-button">Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
