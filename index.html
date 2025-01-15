@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trendify</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
 <body>
@@ -27,102 +30,152 @@
             <div></div>
         </div>
     </nav>
-    <header class="header">
-        <h1>Welcome to Trendify</h1>
-        <p>Discover our latest products</p>
+
+    <header>
+        <h1>Trendify</h1>
+        <p>Shop the Trendiest Products!</p>
     </header>
 
-    <nav class="navbar">
-        <a href="#products-section">Products</a>
-        <a href="#cart-section">Cart(<span id="cart-count">0</span>)</a>
-    </nav>
-    <section class="products-section" id="product-section">
-        <div class="container">
-            <h2>Our Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Stylish Sneakers</h3>
-                    <p class="product-price">$49.99</p>
-                    <button class="add-to-cart" data-name="Stylish Sneakers" data-price="49.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Classic Watch</h3>
-                    <p class="product-price">$99.99</p>
-                    <button class="add-to-cart" data-name="Classic Watch" data-price="99.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Wireless Earbuds</h3>
-                    <p class="product-price">$99.99</p>
-                    <button class="add-to-cart" data-name="Wireless Earbud" data-price="99.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Bluetooth Speaker</h3>
-                    <p class="product-price">$59.99</p>
-                    <button class="add-to-cart" data-name="Bluetooth Speaker" data-price="59.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Gaming Mouse</h3>
-                    <p class="product-price">$39.99</p>
-                    <button class="add-to-cart" data-name="Gaming Mouse" data-price="39.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Laptop Stand</h3>
-                    <p class="product-price">$29.99</p>
-                    <button class="add-to-cart" data-name="Laptop Stand" data-price="29.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Noise Cancelling Headphone</h3>
-                    <p class="product-price">$199.99</p>
-                    <button class="add-to-cart" data-name="Noise Cancelling Heasdphone" data-price="199.99">Add to
-                        Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Wireless Keyboard</h3>
-                    <p class="product-price">$49.99</p>
-                    <button class="add-to-cart" data-name="Wireless Keyboard" data-price="49.99">Add to Cart</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="" alt="">
-                    <h3 class="product-name">Portable Charger</h3>
-                    <p class="product-price">$24.99</p>
-                    <button class="add-to-cart" data-name="Portable Charger" data-price="24.99">Add to Cart</button>
-                </div>
+    <main>
+          <div id="search-bar">
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Search products..." 
+      oninput="searchProducts()">
+  </div>
+        <!-- Products Section -->
+        <section id="product-section">
+            <h2>Products</h2>
+            <div id="products-container">
+                <!-- Products will be dynamically added here -->
             </div>
-        </div>
-    </section>
-    <footer>
-        <p id="cart-message" class="cart-message"></p>
-    </footer>
+        </section>
 
-    <section class="cart-section" id="cart-section">
-        <div class="cart-container">
+        <!-- Cart Section -->
+        <section id="cart-section">
             <h2>Your Cart</h2>
-            <div class="cart-items">
+            <div id="cart-container">
                 <p>Your cart is empty.</p>
             </div>
-            <div id="cart-summary" class="cart-summary">
-                <h3>Total: $<span id="total-price">0.00</span>
-                </h3>
-                <button id="checkout-button" class="checkout-button">Checkout</button>
+            <div id="cart-summary">
+                <p>Total: $<span id="cart-total">0.00</span></p>
             </div>
+        </section>
+    </main>
+    
+    <section id="about-us-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Welcome to <strong>Trendify</strong> – your ultimate destination for the latest and trendiest fashion products. 
+        At Trendify, we believe that style is more than just clothing; it's a statement of individuality, confidence, and creativity.
+      </p>
+      <p>
+        Our mission is to bring you high-quality, affordable, and sustainable fashion products that elevate your everyday style.
+        Whether you're looking for classic wardrobe staples or the latest seasonal trends, we've got you covered.
+      </p>
+      <p>
+        Join us on a journey to redefine fashion and make it accessible for everyone. Let's shape the trends together!
+      </p>
+      
+      <a href="#contact-us" class="btn">Learn More</a>
+    </div>
+    <div class="about-image">
+      <img src="about-img.png" alt="About Us - Trendify">
+    </div>
+  </div>
+</section>
+
+<section id="contact-us-section">
+  <div class="contact-container">
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Reach out to us for inquiries, feedback, or support.</p>
+      <ul>
+        <li><strong>Address:</strong> 123 Trendify Street, Fashion City, USA</li>
+        <li><strong>Email:</strong> <a href="mailto:support@trendify.com">support@trendify.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3>Get in Touch</h3>
+      <form id="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Your Name" required>
         </div>
-    </section>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button class="send-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Map -->
+    <div class="contact-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508759!2d144.9537353155046!3d-37.816279742021115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577ef4f3c8d9bc!2sFashion%20City!5e0!3m2!1sen!2sus!4v1673611234567" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer id="footer-section">
+  <div class="footer-container">
+    <!-- Brand and Description -->
+    <div class="footer-brand">
+      <h2>Trendify</h2>
+      <p>Your one-stop destination for trendy and affordable fashion. Style yourself with confidence!</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-us-section">About Us</a></li>
+        <li><a href="#product-section">Products</a></li>
+        <li><a href="#contact-us-section">Contact Us</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-newsletter">
+      <h3>Subscribe to Our Newsletter</h3>
+      <p>Stay updated on the latest trends, offers, and more!</p>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-copyright">
+    <p>&copy; 2025 Trendify. All Rights Reserved.</p>
+  </div>
+</footer>
+
 
     <script src="script.js"></script>
 </body>
